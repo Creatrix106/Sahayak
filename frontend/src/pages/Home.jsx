@@ -147,7 +147,7 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src="./hero-image.jpg" alt="" />
+          <img src="./hero-image.jpg" alt="Hero-image" />
         </div>
       </div>
 
@@ -196,6 +196,7 @@ const Home = () => {
             <Link to="/report-simplifier">
               <div className="try">
                 <h4>Try now</h4>
+
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -249,6 +250,7 @@ const Home = () => {
             <Link to="/symptom-analyser">
               <div className="try">
                 <h4>Try now</h4>
+
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -311,7 +313,7 @@ const Home = () => {
           <div className="lower-card">
             <Link to="/women-health">
               <div className="try">
-                <h4>Explore now</h4>
+                <h4>Explore More</h4>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

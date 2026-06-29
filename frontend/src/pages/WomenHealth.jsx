@@ -53,7 +53,7 @@ const WomenHealth = () => {
           </div>
 
 
-          <div className="hero-image">
+          <div className="hero-health-image">
             <img src="/women-health.png" alt="" />
           </div>
         </div>
