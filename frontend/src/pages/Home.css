@@ -1,0 +1,218 @@
+.hero-section{
+    /* position: absolute  ; */
+    top: 90px;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    width: 95%;
+    height: 60%;
+}
+.hero-text{
+    width: 45%;
+    height: 100%;
+}
+.hero-image{
+    height: 100%;
+    width: 45%;
+    
+}
+.hero-bar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* width: 50%; */
+    height: 40px;
+    width: 350px;
+    /* padding: 10px; */
+    background-color: rgba(221, 243, 255, 0.696);
+    /* border-radius: 50%; */
+    border-radius: 20px;
+}
+.dot{
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.614);
+}
+.hero-icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.hero-icon h4{
+    color: blue;
+}
+
+.hero-title h1{
+    font-size: 4rem;
+}
+.hero-title span{
+     font-weight: bold;
+    /* Define your gradient angle and colors */
+    background: linear-gradient(90deg, #2bffcd 0%, rgb(37, 48, 255) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title p{
+    width: 80%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.7;
+    margin-top: 16px;
+}
+
+
+.get-start{
+    display: flex;
+    background-color: blue;
+    width: 150px;
+    height: 40px;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+}
+.CTA {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.CTA a{
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-radius:20px;
+}
+ .get-start svg{
+    background-color: #fff;
+    border-radius: 50%;
+ }
+.safe-data{
+    display: flex;
+    /* width: 200px; */
+}
+.safe-data p{
+    width: 50%;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+.safe-data svg{
+    background-color: rgba(128, 128, 128, 0.1);
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.CTA a:hover{
+    scale: 1.03;
+    box-shadow: 0 0 5px black;
+}
+
+.hero-image img{
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.hero-divider{
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-divider h3{
+    font-size: 1.4rem;
+}
+.dash{
+    width: 30px;
+    border: 1px solid gray;
+    margin: 5px;
+}
+.divider-text span{
+    /* width: 30%; */
+    color:#00a982 ;
+}
+
+
+.hero-card-container{
+    margin-top: 20px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.lower-card{
+    align-items: center;
+}
+.lower-card a{
+    display: flex;
+    text-decoration: none;
+    color: blue;
+    margin: 10px;
+}
+.try{
+    margin-right: 5px;
+}
+
+.card{
+    width: 300px;
+    height: 150px;
+    border: 2px solid rgba(128, 128, 128, 0.242);
+    border-radius: 10px ;
+    background-color: rgba(209, 215, 248, 0.596);
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+
+}
+.upper-card{
+    display: flex;
+    width: 100%;
+}
+.card-icon{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.card-icon svg{
+    /* display: none; */
+    margin: 10px;
+
+    padding: 10px;
+    background-color:#2b99ff5e;
+    border-radius: 10px;
+}
+.card-desc{
+    width: 705;
+}
+
+
+#simplifier{
+    border: 2px solid rgba(0, 0, 255, 0.358);
+}
+#analyser{
+    border: 2px solid rgba(0, 208, 0, 0.347);
+    background-color:rgba(6, 217, 20, 0.114) ;
+} 
+#analyser .card-icon svg{
+    background-color:rgba(6, 217, 20, 0.348) ;
+}
+#women{
+    border: 2px solid rgba(153, 0, 208, 0.347);
+    background-color:rgba(105, 6, 217, 0.114) ;
+
+    
+}
+#women .card-icon svg{
+    background-color:rgba(112, 6, 217, 0.348) ;
+}
+
+
+.card:hover{
+    scale: 1.05;
+    transform: translateY(-5px);
+    box-shadow: 0 0 5px black;
+}

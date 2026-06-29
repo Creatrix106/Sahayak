@@ -1,0 +1,35 @@
+.report-container{
+    width: 80vw;
+    height: 90vh;
+    /* padding-top: 75px; */
+    background-color: rgba(128, 0, 128, 0.038);
+}
+
+.header-svg svg{
+    background-color: #5700ba24;
+    padding: 10px;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.report-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left:10px ;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+.report-header-text p{
+    opacity: 0.6;
+}
+.report-card-container{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    align-items:center ;
+}
+
+
+

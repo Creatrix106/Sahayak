@@ -1,0 +1,36 @@
+.other-conditions-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 24px;
+  margin: auto;
+  margin-top: 30px;
+  width: 95%;
+}
+
+.other-conditions-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.other-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px 20px;
+
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  color: #64748b;
+  font-size: 14px;
+}
+
+.other-placeholder svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
