@@ -1,9 +1,9 @@
-.symptom-analyser-container{
-    width: 80%;
-    height: auto;
+.symptom-analyser-container {
+    width: 100%;
+    max-width: 1400px;
     background-color: rgba(114, 255, 92, 0.09);
     border: 2px solid rgba(128, 128, 128, 0.126);
-    padding-left: 20px;
+    padding: 20px;
 }
 .analyser-icon svg{
     padding: 10px;
@@ -236,5 +236,49 @@ h3 {
 @media (max-width: 900px) {
   .recommendations-section {
     grid-template-columns: 1fr;
+  }
+  .warning-card{
+    margin-top: 20px;
+  }
+
+}
+@media (max-width: 768px) {
+  .analyser-heading {
+    gap: 15px;
+  }
+
+  .analyser-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .analyser-title p {
+    font-size: 0.9rem;
+  }
+  .bottom-section {
+    flex-direction: column;
+  }
+
+  .analyse-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .recommendation-card,
+  .warning-card {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .tag {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+  .step-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
 }

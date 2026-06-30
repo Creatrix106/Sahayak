@@ -1,20 +1,23 @@
-.upload-box{
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid rgba(128, 128, 128, 0.286);
-    width: 45%;
-    min-width: 400px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
+.upload-box {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.286);
 
+  width: 100%;
+  max-width: 650px;
+
+  min-height: 600px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .drop-zone {
   position: relative;
-  height: 250px;
+  min-height: 250px;
+  height: auto;
   padding: 25px;
   display: flex;
   align-items: center;
@@ -25,7 +28,9 @@
   border-radius: 8px;
   cursor: pointer;
   color: #555555;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .drop-zone:hover {
@@ -45,58 +50,58 @@
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0; 
+  opacity: 0;
   cursor: pointer;
 }
 
-
-.confidential{
-    display: flex;
-    width: 90%;
-    height: 65px;
-    background-color: #5700ba24;
-    border-radius: 10px;
-    align-items: center;
+.confidential {
+  display: flex;
+  background-color: #5700ba24;
+  border-radius: 10px;
+  align-items: center;
+  width: 100%;
+  min-height: 70px;
+  padding: 10px;
+  margin-top: 10px;
 }
-.confidential-icon{
-    width: 10%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.confidential-icon {
+  margin-right: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.confidential-text{
-    width: 80%;
+.confidential-text {
+  width: 80%;
 }
 
-
-.file-preview{
+.file-preview {
   display: flex;
   width: 100%;
   gap: 20px;
   align-items: center;
   justify-content: space-evenly;
 }
-.file-card{
+.file-card {
   background-color: #5700ba24;
-  border-radius: 10px;  
+  border-radius: 10px;
   display: flex;
   padding: 5px;
   /* align-items: center; */
   width: 50%;
   max-width: 300px;
 }
-.file-icon{
+.file-icon {
   margin: 10px;
   width: 15%;
   height: 100%;
 }
 
-#start-analyse{
+#start-analyse {
   width: 40%;
   max-width: 300px;
   height: 50px;
-  background-color:  rgb(75, 75, 255);
+  background-color: rgb(75, 75, 255);
   border: none;
   border-radius: 10px;
   color: white;
@@ -105,13 +110,12 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-#start-analyse:hover{
+#start-analyse:hover {
   scale: 1.03;
-  background-color:  rgb(16, 16, 255);
-
+  background-color: rgb(16, 16, 255);
 }
 
-#close-file{
+#close-file {
   position: relative;
   top: 0px;
   margin-left: auto;
@@ -120,4 +124,29 @@
   border-radius: 5px;
   cursor: pointer;
   background-color: #5700ba24;
+}
+
+@media (max-width: 768px) {
+  .upload-box {
+    width: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .file-preview {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .file-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  #start-analyse {
+    width: 100%;
+    max-width: none;
+  }
 }
