@@ -6,14 +6,19 @@ import ReportSimplifier from "./pages/ReportSimplifier.jsx";
 import SymptomAnalyzer from "./pages/SymptomAnalyzer";
 import WomenHealth from "./pages/WomenHealth";
 
+import SahayakAI from "./components/SahayakAI/SahayakAI.jsx";
+
 function App() {
   return (
+    <>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/report-simplifier" element={<ReportSimplifier/>} />
       <Route path="/symptom-analyser" element={<SymptomAnalyzer />} />
       <Route path="/women-health" element={<WomenHealth />} />
     </Routes>
+    <SahayakAI/>
+    </>
   );
 }
 

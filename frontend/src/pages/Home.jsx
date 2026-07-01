@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "../components/Navbar.jsx";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import SahayakAI from "../components/SahayakAI/SahayakAI.jsx";
+
+
 const Home = () => {
   return (
     <div className="main-container">
@@ -333,6 +336,8 @@ const Home = () => {
             </Link>
           </div>
         </div>
+    {/* <SahayakAI/> */}
+
       </div>
     </div>
   );
