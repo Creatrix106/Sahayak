@@ -8,8 +8,8 @@ import SummaryBox from '../components/SumarryBox.jsx'
 
 const ReportSimplifier = () => {
   const [file, setFile] = useState(null);
-  const [reportSummary, setReportSummary] = useState(null);
-  const [loading, setLoading] = useState(false);
+const [summary, setSummary] = useState(null);
+const [loading, setLoading] = useState(false);
 
   return (
     <div className="main-container">
@@ -42,8 +42,16 @@ const ReportSimplifier = () => {
           </div>
         </div>
         <div className="report-card-container">
-        <UploadBox setLoading={setLoading}/>
-        <SummaryBox  loading={loading} />
+        <UploadBox
+  file={file}
+  setFile={setFile}
+  setLoading={setLoading}
+  setSummary={setSummary}
+/>
+       <SummaryBox
+  loading={loading}
+  summary={summary}
+/>
         </div>
       </div>    
     </div>

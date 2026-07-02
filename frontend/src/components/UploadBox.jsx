@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import "./UploadBox.css";
-const UploadBox = ({setLoading} ) => {
-  const [file, setFile] = useState(null);
-  const [analyse, setAnalyse] = useState(false);
+const UploadBox = ({file,
+  setFile,
+  setLoading,
+  setSummary,} ) => {
   const fileInputRef = useRef();
 
   const handleFileChange = (e) => {
@@ -11,14 +12,32 @@ const UploadBox = ({setLoading} ) => {
       setFile(selected);
     }
   };
-  const handleAnalyse = () => {
-    setLoading(true);
+  const handleAnalyse = async () => {
+  if (!file) return;
 
-    // later you'll call your backend here
-    setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-  };
+  setLoading(true);
+
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await fetch(
+      "http://localhost:5000/analyse",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+
+    setSummary(data.summary);
+  } catch (err) {
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className="upload-box">
       <div className="upload-heading">

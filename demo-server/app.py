@@ -6,17 +6,10 @@ import os
 
 from flask import request, jsonify
 
-load_dotenv()
 
-genai.configure(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
-
-model = genai.GenerativeModel(
-    "gemini-2.5-flash"
-)
 app = Flask(__name__)
 CORS(app)
+
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
@@ -37,12 +30,9 @@ User Question:
 {message}
     """
 
-    response = model.generate_content(
-        prompt
-    )
 
     return jsonify({
-        "reply": response.text
+        'reply': "SORRY! you have cancer"
     })
 
 @app.route("/")

@@ -2,15 +2,39 @@ import React from "react";
 import "./SummaryBox.css";
 import AnalysisLoader from "../components/AnalysisLoader.jsx";
 
-const SumarryBox = ({ loading }) => {
+const SumarryBox = ({ loading, summary }) => {
+  if (loading) {
+    return (
+      <div className="summary-container">
+        <div className="summary-title">
+          <h3>2. Report Summary</h3>
+        </div>
+        <AnalysisLoader currentStep={2} />
+      </div>
+    );
+  }
+
+  if (summary) {
+    return (
+      <div className="summary-container">
+        <div className="summary-title">
+          <h3>2. Report Summary</h3>
+        </div>
+
+        <div className="summary-result">
+          {summary}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="summary-container">
       <div className="summary-title">
         <h3>2. Report Summary</h3>
       </div>
-      {loading ? (
-        <AnalysisLoader currentStep={2}/>
-      ) : (
+      
+     
         <>
           <div className="summary-icon">
             <img src="./report.png" alt="" />
@@ -103,7 +127,7 @@ const SumarryBox = ({ loading }) => {
             </div>
           </div>
         </>
-      )}
+      
     </div>
   );
 };
