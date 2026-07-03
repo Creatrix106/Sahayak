@@ -3,8 +3,27 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+@app.route("/analyse", methods=["POST"])
+def analyse_report():
+    if "file" not in request.files:
+        return jsonify({"error": "No file uploaded."}), 400
 
+    file = request.files["file"]
 
+    if file.filename == "":
+        return jsonify({"error": "No file selected."}), 400
+
+    summary = {
+        "title": "Analysis Complete",
+        "summary": "Your blood sugar is slightly elevated.",
+        "findings": [
+            "Glucose: 118 mg/dL",
+            "Vitamin D deficiency"
+        ],
+        "advice": "Consult a physician if symptoms persist."
+    }
+
+    return jsonify(summary)
 @app.route("/")
 def home():
     return "Sahayak AI Server Running"

@@ -1,43 +1,20 @@
 import React, { useRef } from "react";
 import "./UploadBox.css";
-const UploadBox = ({file,
+const UploadBox = ({
+  file,
   setFile,
-  setLoading,
-  setSummary,} ) => {
+  onAnalyse }) => {
   const fileInputRef = useRef();
 
   const handleFileChange = (e) => {
     const selected = e.target.files[0];
     if (selected) {
       setFile(selected);
+      setSummary(null);
     }
   };
-  const handleAnalyse = async () => {
-  if (!file) return;
 
-  setLoading(true);
 
-  try {
-    const formData = new FormData();
-    formData.append("file", file);
-
-    const response = await fetch(
-      "http://localhost:5000/analyse",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
-
-    const data = await response.json();
-
-    setSummary(data.summary);
-  } catch (err) {
-    console.error(err);
-  } finally {
-    setLoading(false);
-  }
-};
   return (
     <div className="upload-box">
       <div className="upload-heading">
@@ -86,20 +63,25 @@ const UploadBox = ({file,
                 <p>Size: {(file.size / 1024).toFixed(2)} KB</p>
                 <p>Type: {file.type || "Unknown"}</p>
               </div>
-              </div>
-              <button
-                id="close-file"
-                onClick={() => {
-                  setFile(null);
-                  if (fileInputRef.current) {
-                    fileInputRef.current.value = "";
-                  }
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="purple" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-              </button>
+            </div>
+            <button
+              id="close-file"
+              onClick={() => {
+                setFile(null);
+                if (fileInputRef.current) {
+                  fileInputRef.current.value = "";
+                }
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="purple" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6" /><path d="M14 11v6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" /><path d="M3 6h18" /><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg>
+            </button>
           </div>
-          <button id="start-analyse" onClick={handleAnalyse}>Simplify Report</button>
+          <button
+            id="start-analyse"
+            onClick={onAnalyse}
+          >
+            Simplify Report
+          </button>
         </div>
       )}
 

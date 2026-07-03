@@ -1,0 +1,86 @@
+.other-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.other-card h2 {
+  margin-bottom: 25px;
+  color: #1f2937;
+}
+
+.conditions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.condition-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border: 1px solid #edf2f7;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.condition-item:hover {
+  background: #f8fafc;
+  transform: translateX(4px);
+}
+
+.condition-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.condition-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.condition-left h3 {
+  font-size: 17px;
+  color: #1f2937;
+}
+
+.condition-left p {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.arrow {
+  color: #94a3b8;
+}
+
+.more-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 15px;
+
+  background: white;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+
+  color: #2563eb;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}

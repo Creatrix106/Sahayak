@@ -8,8 +8,37 @@ import SummaryBox from '../components/SumarryBox.jsx'
 
 const ReportSimplifier = () => {
   const [file, setFile] = useState(null);
-const [summary, setSummary] = useState(null);
-const [loading, setLoading] = useState(false);
+  const [summary, setSummary] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+
+  const handleAnalysis = async () => {
+  if (!file) return;
+
+  setLoading(true);
+  setSummary(null);
+
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await fetch(
+      "http://localhost:8000/analyse",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+
+    setSummary(data);
+  } catch (err) {
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="main-container">
@@ -37,23 +66,22 @@ const [loading, setLoading] = useState(false);
             </svg>
           </div>
           <div className="report-header-text">
-          <h2>Report Simplifier</h2>
-          <p>Upload your medical report and get easy to understand summaries.</p>
+            <h2>Report Simplifier</h2>
+            <p>Upload your medical report and get easy to understand summaries.</p>
           </div>
         </div>
         <div className="report-card-container">
-        <UploadBox
+          <UploadBox
   file={file}
   setFile={setFile}
-  setLoading={setLoading}
-  setSummary={setSummary}
+  onAnalyse={handleAnalysis}
 />
-       <SummaryBox
-  loading={loading}
-  summary={summary}
-/>
+          <SummaryBox
+            loading={loading}
+            summary={summary}
+          />
         </div>
-      </div>    
+      </div>
     </div>
   );
 };

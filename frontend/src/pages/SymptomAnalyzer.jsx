@@ -3,8 +3,10 @@ import Navbar from "../components/Navbar";
 import "./SymptomAnalyzer.css";
 import AnalysisPlaceholder from "../components/AnalysisPlaceHolder";
 import AnalysisLoader from "../components/AnalysisLoader.jsx";
-import ResultCard from "../components/ResultCard.jsx";
 import OtherConditionsPlaceholder from "../components/OtherConditionsPlaceholder.jsx";
+import OtherConditions from "../components/OtherConditions.jsx";
+import ResultCard from '../components/ResultCard.jsx'
+
 
 const SymptomAnalyzer = () => {
   const [symptoms, setSymptoms] = useState([
@@ -15,6 +17,9 @@ const SymptomAnalyzer = () => {
     "Nausea",
   ]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+const [result, setResult] = useState(null);
+const [conditions, setConditions] = useState([]);
   const addSymptom = () => {
     if (
       input.trim() &&
@@ -36,6 +41,34 @@ const SymptomAnalyzer = () => {
       addSymptom();
     }
   };
+  const handleAnalyse = async () => {
+  if (symptoms.length === 0) return;
+
+  setLoading(true);
+
+  try {
+    const response = await fetch(
+  "http://127.0.0.1:8000/analyse-symptoms",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      symptoms,
+    }),
+  }
+);
+    const data = await response.json();
+    console.log(data)
+    setResult(data);
+    setConditions(data.otherConditions || []);
+  } catch (err) {
+    console.log(err);
+  }
+
+  setLoading(false);
+};
   return (
     <div className="main-container">
       <Navbar />
@@ -102,7 +135,7 @@ const SymptomAnalyzer = () => {
                 💡 Tip: Enter specific symptoms for more accurate results.
               </div>
 
-              <button className="analyse-btn">
+              <button className="analyse-btn" onClick={handleAnalyse}>
                 {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -127,21 +160,19 @@ const SymptomAnalyzer = () => {
           </div>
         </div>
         <div className="result-section">
-          {/* {loading ? (
+          {loading ? (
             <AnalysisLoader />
           ) : result ? (
-            <ResultCard data={result} />
+            <ResultCard result={result} />
           ) : (
             <AnalysisPlaceholder />
-          )} */}
-          <AnalysisPlaceholder />
+          )}
 
-          {/* {conditions.length > 0 ? (
+          {conditions.length > 0 ? (
             <OtherConditions conditions={conditions} />
           ) : (
             <OtherConditionsPlaceholder />
-          )} */}
-          <OtherConditionsPlaceholder />
+          )}
         </div>
         <div className="recommendations-section">
           <div className="recommendation-card">
