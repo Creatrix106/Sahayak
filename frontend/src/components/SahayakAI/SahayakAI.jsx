@@ -4,11 +4,17 @@ import React, {
     useRef,
 } from "react";
 import './SahayakAI.css'
-import { BotMessageSquare, SendHorizontal } from 'lucide-react';
+import {
+    BotMessageSquare,
+    SendHorizontal,
+    Mic,
+    MicOff
+} from "lucide-react";
 
 const SahayakAI = () => {
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("");
+    const [listening, setListening] = useState(false);
     const [messages, setMessages] = useState([
         {
             sender: "bot",
@@ -70,9 +76,9 @@ const SahayakAI = () => {
                         "Something went wrong 😔",
                 },
             ]);
+        } finally {
+            setLoading(false);
         }
-
-        setLoading(false);
     };
     const messagesEndRef = useRef(null);
 
@@ -81,74 +87,154 @@ const SahayakAI = () => {
             behavior: "smooth",
         });
     }, [messages]);
-    return (
-        <div id="sahayak-ai">
-            <div
-                className="ai-button"
-                onClick={() => setOpen(!open)}
-            >
-                <BotMessageSquare color="white" size={33} />
-            </div>
-            {
-                open && (
-                    <div className="chat-container">
-                        <div className="chat-header">
-                            <span>
-                                <BotMessageSquare color="white" size={30} />
-                                Sahayak AI
-                            </span>
 
-                            <button
-                                className="close-chat"
-                                onClick={() => setOpen(false)}
-                            >
-                                ✕
-                            </button>
-                        </div>
+    const recognitionRef = useRef(null);
 
-                        <div className="chat-body">
-                            {messages.map((msg, index) => (
+    useEffect(() => {
+        const SpeechRecognition =
+            window.SpeechRecognition ||
+            window.webkitSpeechRecognition;
 
-                                <div
-                                    key={index}
-                                    className={msg.sender}
-                                >
-                                    {msg.text}
-                                </div>
+        if (!SpeechRecognition) return;
 
-                            ))}
-                            {
-                                loading && (
-                                    <div className="message bot">
-                                        Thinking...
-                                    </div>
-                                )
-                            }
-                        </div>
+        const recognition = new SpeechRecognition();
 
-                        <div className="chat-input">
-                            <input
-                                value={message}
-                                onChange={(e) =>
-                                    setMessage(e.target.value)
-                                }
-                                onKeyDown={(e) => {
-                                    if (e.key === "Enter") {
-                                        sendMessage();
-                                    }
-                                }}
-                                placeholder="Ask something..."
-                            />
+        recognition.lang = "en-US";
+        recognition.continuous = false;
+        recognition.interimResults = false;
 
-                            <button onClick={sendMessage}>
-                                <SendHorizontal />
-                            </button>
-                        </div>
-                    </div>
-                )
-            }
+        recognition.onstart = () => {
+            setListening(true);
+        };
+
+        recognition.onresult = (event) => {
+            setMessage(event.results[0][0].transcript);
+        };
+
+        recognition.onerror = (e) => {
+            console.log(e.error);
+            setListening(false);
+        };
+
+        recognition.onend = () => {
+            setListening(false);
+        };
+
+        recognitionRef.current = recognition;
+
+
+        return () => {
+        recognition.abort();
+    };
+    }, []);
+
+    const startListening = () => {
+        if (listening) return;
+        const recognition = recognitionRef.current;
+        if (!recognition) {
+            alert("Speech Recognition is not supported.");
+
+            return;
+        }
+        recognition.start();
+        
+    };
+
+
+return (
+    <div id="sahayak-ai">
+        <div
+            className="ai-button"
+            onClick={() => setOpen(!open)}
+        >
+            <BotMessageSquare color="white" size={33} />
         </div>
-    )
+        {
+            open && (
+                <div className="chat-container">
+                    <div className="chat-header">
+                        <span>
+                            <BotMessageSquare color="white" size={30} />
+                            Sahayak AI
+                        </span>
+
+                        <button
+                            className="close-chat"
+                            onClick={() => {
+                                recognitionRef.current?.stop();
+                                setListening(false);
+                                setOpen(false);
+                            }}
+                        >
+                            ✕
+                        </button>
+                    </div>
+
+                    <div className="chat-body">
+                        {messages.map((msg, index) => (
+
+                            <div
+                                key={index}
+                                className={msg.sender}
+                            >
+                                {msg.text}
+                            </div>
+
+                        ))}
+                        {
+                            loading && (
+                                <div className="message bot">
+                                    Thinking...
+                                </div>
+                            )
+                        }
+                        <div ref={messagesEndRef}></div>
+                    </div>
+
+                    <div className="chat-input">
+                        <input
+                            value={message}
+                            onChange={(e) =>
+                                setMessage(e.target.value)
+                            }
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                    sendMessage();
+                                }
+                            }}
+                            placeholder={
+                                listening
+                                    ? "🎤 Listening..."
+                                    : "Ask something..."
+                            }
+                        />
+
+
+
+                        <button
+                            className="mic-btn"
+                            onClick={startListening}
+                        >
+                            {
+                                listening
+                                    ? <MicOff />
+                                    : <Mic />
+                            }
+                        </button>
+
+                        <button
+                            onClick={sendMessage}
+                            disabled={listening}
+                        >
+                            <SendHorizontal />
+                        </button>
+
+                    </div>
+                </div>
+            )
+        }
+    </div>
+)
 }
 
 export default SahayakAI

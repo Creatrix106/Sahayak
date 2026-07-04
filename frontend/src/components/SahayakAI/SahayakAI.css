@@ -146,6 +146,24 @@
     gap: 10px;
 }
 
+.mic-btn{
+    background:none;
+    border:none;
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#6b7280;
+
+    transition:.2s;
+}
+
+.mic-btn:hover{
+    color:#7c3aed;
+}
+
 @keyframes popIn {
   from {
     opacity: 0;
