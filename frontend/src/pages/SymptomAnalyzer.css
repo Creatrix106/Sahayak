@@ -1,7 +1,8 @@
 .symptom-analyser-container {
     width: 100%;
     max-width: 1400px;
-    background-color: rgba(114, 255, 92, 0.09);
+    /* background-color: rgba(114, 255, 92, 0.09); */
+    background-color: var(--surface);
     border: 2px solid rgba(128, 128, 128, 0.126);
     padding: 20px;
 }
@@ -29,6 +30,7 @@
   width: 95%;
   margin:auto;
   margin-top: 25px;
+  /* background-color: red; */
 }
 
 
@@ -152,6 +154,7 @@ h3 {
 
 .recommendation-card {
   background: white;
+  background-color: var(--card);
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   padding: 25px;
@@ -160,6 +163,7 @@ h3 {
 
 .recommendation-card h3 {
   margin-bottom: 20px;
+  color: var(--text);
 }
 .step-card {
   display: flex;
@@ -169,12 +173,13 @@ h3 {
   border: 1px solid #e9ecef;
   border-radius: 16px;
   margin-bottom: 15px;
+  background-color: var(--surface);
 }
 
 .step-icon {
   width: 55px;
   height: 55px;
-  background: #ecfdf5;
+  background: var(--icon);
   color: #10b981;
   border-radius: 14px;
 
@@ -190,24 +195,12 @@ h3 {
 }
 
 .step-card p {
-  color: #6b7280;
+  color: var(--text);
   line-height: 1.5;
 }
 
-.view-btn {
-  width: 100%;
-  margin-top: 15px;
-  padding: 15px;
-  border: 2px solid #10b981;
-  background: transparent;
-  border-radius: 12px;
-  color: #10b981;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 .warning-card {
-  background: #fff5f5;
+  background: var(--warning);
   border: 1px solid #fecaca;
   border-radius: 20px;
   padding: 25px;
@@ -226,7 +219,9 @@ h3 {
 
 .warning-card li {
   margin-bottom: 15px;
-  color: #374151;
+  /* color: #374151; */
+  color: var(--text);
+
 }
 .emergency-btn {
   width: 100%;

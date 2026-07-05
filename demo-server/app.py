@@ -3,7 +3,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-@app.route("/analyse", methods=["POST"])
+@app.route("/simplify", methods=["POST"])
 def analyse_report():
     if "file" not in request.files:
         return jsonify({"error": "No file uploaded."}), 400

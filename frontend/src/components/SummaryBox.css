@@ -1,6 +1,6 @@
 .summary-container{
-    background-color: #faf9ff;
-    background-color: #fff;
+    background-color: var(--card);
+    /* background-color: #fff; */
     display: flex;
     flex-direction: column;
     padding: 18px;
@@ -8,6 +8,11 @@
     border: 1px solid rgba(128, 128, 128, 0.286);
 
 }
+
+.summary-container h3{
+  color: var(--text);
+}
+
 .summary-container {
     width: 100%;
     max-width: 650px;

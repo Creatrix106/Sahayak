@@ -9,6 +9,7 @@
 .hero-text{
     width: 45%;
     height: 100%;
+    color:var(--text)
 }
 .hero-image{
     height: 50vh;   
@@ -36,6 +37,7 @@
     width: 5px;
     border-radius: 50%;
     background-color: rgba(128, 128, 128, 0.614);
+    background-color: var(--text);
 }
 .hero-icon{
     display: flex;
@@ -119,9 +121,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.hero-divider h3{
+  }
+  .hero-divider h3{
     font-size: 1.4rem;
+    color: var(--text);
 }
 .dash{
     width: 30px;
@@ -197,15 +200,20 @@
 }
 
 
+#simplifier svg{
+  color: var(--primary);
+}
 #simplifier{
     border: 2px solid rgba(0, 0, 255, 0.358);
+    background-color:rgba(0, 0, 0, 0.114) ;
+    
 }
 #analyser{
     border: 2px solid rgba(0, 208, 0, 0.347);
     background-color:rgba(6, 217, 20, 0.114) ;
 } 
 #analyser .card-icon svg{
-    background-color:rgba(6, 217, 20, 0.348) ;
+    background-color:rgba(6, 217, 20, 0.148) ;
 }
 #women{
     border: 2px solid rgba(153, 0, 208, 0.347);
@@ -221,7 +229,7 @@
 .card:hover{
     scale: 1.05;
     transform: translateY(-5px);
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 10px var(--text);
 }
 
 

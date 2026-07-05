@@ -1,8 +1,8 @@
 .upload-box {
-  background-color: #fff;
+  background-color: var(--card);
   padding: 25px;
   border-radius: 10px;
-  border: 1px solid rgba(128, 128, 128, 0.286);
+  border:var(--border);
 
   width: 100%;
   max-width: 650px;
@@ -14,6 +14,11 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+.upload-box h3{
+  color: var(--text);
+}
+
 .drop-zone {
   position: relative;
   min-height: 250px;
@@ -23,7 +28,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: var(--uploadZone);
   border: 2px dashed #a0a0a0;
   border-radius: 8px;
   cursor: pointer;
@@ -34,7 +39,7 @@
 }
 
 .drop-zone:hover {
-  background-color: #e2e6ea;
+  background-color: var(--uploadHover);
   border-color: #6c757d;
 }
 
@@ -63,6 +68,8 @@
   min-height: 70px;
   padding: 10px;
   margin-top: 10px;
+  border: var(--border);
+
 }
 .confidential-icon {
   margin-right: 10px;
@@ -90,6 +97,7 @@
   /* align-items: center; */
   width: 50%;
   max-width: 300px;
+  border: var(--border);
 }
 .file-icon {
   margin: 10px;

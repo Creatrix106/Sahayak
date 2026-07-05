@@ -1,8 +1,8 @@
 .analysis-card {
-  background: #fff;
+  background: var(--card);
   width: 95%;
   margin: auto;
-  border: 1px solid #e8e8e8;
+  border: var(--border);
   border-radius: 20px;
   padding: 25px;
   margin-top: 30px;
@@ -11,7 +11,7 @@
 .analysis-card h3 {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #1f2937;
+  color: var(--analysisText);
 }
 
 .analysis-placeholder {
