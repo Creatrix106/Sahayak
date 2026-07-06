@@ -5,7 +5,7 @@
 }
 :root {
 
-    --bg: #ffffff;
+    --bg: #f7fcff;
     --surface: #f7f8fa;
     --text: #222;
     --primary: #2563eb;
@@ -17,6 +17,7 @@
     --uploadZone:#f8f9fa;
     --uploadHover:#e2e6ea;
     --resultStatus:#ecfdf5;
+    --lightGreen:#228b5a;
 }
 
 [data-theme="dark"] {
@@ -29,11 +30,13 @@
   
     --border: 2px solid rgba(171, 171, 171, 0.126);
     --warning:rgba(115, 0, 0, 0.284);
-    --card:#212121;
+    --card:#181818;
     --icon:hsla(0, 0%, 23%, 0.212);
     --uploadZone:#71717114; 
     --uploadHover:#f8f9fa23; 
     --resultStatus:#002a163b;
+    --lightGreen:#228b5a;
+  
   
   
 

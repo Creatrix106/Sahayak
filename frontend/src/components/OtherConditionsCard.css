@@ -1,5 +1,4 @@
 .other-card {
-  background: white;
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   padding: 30px;
@@ -7,7 +6,7 @@
 
 .other-card h2 {
   margin-bottom: 25px;
-  color: #1f2937;
+  color: var(--text);
 }
 
 .conditions-list {
@@ -29,6 +28,7 @@
 
 .condition-item:hover {
   background: #f8fafc;
+  background:var(--uploadZone);
   transform: translateX(4px);
 }
 
@@ -52,7 +52,7 @@
 
 .condition-left h3 {
   font-size: 17px;
-  color: #1f2937;
+  /* color: #1f2937; */
 }
 
 .condition-left p {

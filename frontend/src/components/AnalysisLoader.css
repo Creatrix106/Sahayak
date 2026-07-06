@@ -1,5 +1,5 @@
 .analysis-loader {
-  background: white;
+  background: var(--card);
   border-radius: 20px;
   padding: 30px;
   border: 1px solid #e5e7eb;

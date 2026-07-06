@@ -2,10 +2,11 @@
   background: var(--card);
   width: 95%;
   margin: auto;
-  border: var(--border);
   border-radius: 20px;
   padding: 25px;
   margin-top: 30px;
+  border: 1px solid #e5e7eb;
+
 }
 
 .analysis-card h3 {
@@ -15,10 +16,11 @@
 }
 
 .analysis-placeholder {
-  border: 1px dashed #e4e4e7;
+  border: 1px dashed #d4d4d4;
   border-radius: 18px;
   padding: 50px 30px;
   text-align: center;
+  background-color: var(--surface);
 }
 
 .analysis-icon {
@@ -35,7 +37,7 @@
 
 .analysis-placeholder h2 {
   margin-top: 20px;
-  color: #1f2937;
+  color: var(--analysisText);
   font-size: 30px;
 }
 

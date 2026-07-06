@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { House, FileText, Stethoscope, Flower } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,7 +36,6 @@ const Navbar = () => {
             <li><Link to="/women-health"><Flower />Women's Health</Link></li>
           </ul>
         </div>
-      <ThemeToggle/>
       </div>
     </>
   )

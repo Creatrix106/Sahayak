@@ -1,5 +1,5 @@
 .other-conditions-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid #e5e7eb;
   border-radius: 18px;
   padding: 24px;
@@ -22,7 +22,8 @@
 
   padding: 16px 20px;
 
-  background: #f8fafc;
+  /* background: #f8fafc; */
+  background:var(--surface);
   border: 1px solid #e5e7eb;
   border-radius: 12px;
 
