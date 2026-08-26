@@ -195,10 +195,12 @@
     background-color:#2b99ff5e;
     border-radius: 10px;
 }
-.card-desc{
-    width: 705;
-}
 
+
+.card-desc {
+    flex: 1;
+    min-width: 0;
+}
 
 #simplifier svg{
   color: var(--primary);
