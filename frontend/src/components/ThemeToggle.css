@@ -16,6 +16,7 @@
     margin-top: 100px;
     bottom: 100px;
     right: 30px;
+    z-index: 999;
 }
 
 .theme-toggle.light {
@@ -33,10 +34,6 @@
 
     box-shadow:
         0 5px 15px rgba(0,0,0,.4);
-}
-
-.theme-toggle:hover {
-    /* transform: translateY(-3px); */
 }
 
 .theme-toggle:active {
