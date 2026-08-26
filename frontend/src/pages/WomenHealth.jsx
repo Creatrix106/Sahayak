@@ -38,6 +38,7 @@ const WomenHealth = () => {
           <div className="health-title">
             <h2>Women's Health</h2>
             <p>Trusted information and guidance for every stage of a women's life</p>
+            <p>We just redirects your to authentic articles</p>
           </div>
         </div>
         <div className="women-hero">

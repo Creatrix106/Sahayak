@@ -19,7 +19,7 @@ const Navbar = () => {
           </div>
           <div className="logo-caption">
             <h4>Sahayak</h4>
-            <p>Your Ai Health Companion</p>
+            <p>Your AI Health Companion</p>
           </div>
         </div>
         <div
@@ -33,7 +33,7 @@ const Navbar = () => {
             <li><Link to="/"><House /> {" "} Home</Link></li>
             <li><Link to="/report-simplifier"><FileText />Report Simplifier</Link></li>
             <li><Link to="/symptom-analyser"><Stethoscope />Symptom Analyser</Link></li>
-            <li><Link to="/women-health"><Flower />Women's Health</Link></li>
+            {/* <li><Link to="/women-health"><Flower />Women's Health</Link></li> */}
           </ul>
         </div>
       </div>
