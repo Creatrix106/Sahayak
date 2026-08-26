@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import "./SymptomAnalyzer.css";
-import AnalysisPlaceholder from "../components/AnalysisPlaceHolder";
+import AnalysisPlaceholder from "../components/AnalysisPlaceholder";
 import AnalysisLoader from "../components/AnalysisLoader.jsx";
 import OtherConditionsPlaceholder from "../components/OtherConditionsPlaceholder.jsx";
 import OtherConditions from "../components/OtherConditions.jsx";
