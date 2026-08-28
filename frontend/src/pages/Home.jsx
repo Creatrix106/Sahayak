@@ -232,7 +232,7 @@ const Home = () => {
           </div>
         
         {' '}
-        <span className="section-heading-highlight">2 Core Modes</span>
+        <span className="section-heading-highlight"> Core Modes</span>
         <span className="section-heading-line" />
       </h3>
 
