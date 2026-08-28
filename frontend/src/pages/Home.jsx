@@ -215,7 +215,7 @@ const Home = () => {
             </h1>
             <p>
               Sahayak uses AI to simplify te medical reports, assess symptoms
-              and educate women about reproductive health in simple words.
+              and provide clear health insights in simple words.
             </p>
           </div>
           
