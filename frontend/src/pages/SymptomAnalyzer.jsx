@@ -48,7 +48,7 @@ const [conditions, setConditions] = useState([]);
 
   try {
     const response = await fetch(
-  "http://127.0.0.1:8000/analyse-symptoms",
+  "http://localhost:8000/analyse-symptoms",
   {
     method: "POST",
     headers: {

@@ -1,0 +1,12 @@
+# --- Web framework -----------------------------------------------------
+fastapi>=0.141.0,<1.0.0
+uvicorn[standard]>=0.52.0,<1.0.0
+python-multipart>=0.0.32   # required by FastAPI for multipart/form-data (file uploads)
+
+# --- Settings & validation ----------------------------------------------
+pydantic>=2.13.0,<3.0.0
+pydantic-settings>=2.15.0,<3.0.0
+python-dotenv>=1.2.0
+
+# --- Google Gemini API ---------------------------------------------------
+google-genai>=2.20.0

@@ -10,7 +10,7 @@ import {
     Mic,
     MicOff
 } from "lucide-react";
-
+import ReactMarkdown from "react-markdown";
 const SahayakAI = () => {
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("");
@@ -43,7 +43,7 @@ const SahayakAI = () => {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:8000/chat",
+                "http://localhost:8000/chat",
                 {
                     method: "POST",
                     headers: {
@@ -177,7 +177,7 @@ return (
                                 key={index}
                                 className={msg.sender}
                             >
-                                {msg.text}
+                                <ReactMarkdown>{msg.text}</ReactMarkdown>
                             </div>
 
                         ))}
