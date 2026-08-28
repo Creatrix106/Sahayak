@@ -48,7 +48,7 @@ const [conditions, setConditions] = useState([]);
 
   try {
     const response = await fetch(
-  "http://localhost:8000/analyse-symptoms",
+  `${import.meta.env.VITE_API_URL}/analyse-symptoms`,
   {
     method: "POST",
     headers: {

@@ -43,7 +43,7 @@ const SahayakAI = () => {
 
         try {
             const response = await fetch(
-                "http://localhost:8000/chat",
+                `${import.meta.env.VITE_API_URL}/chat`,
                 {
                     method: "POST",
                     headers: {

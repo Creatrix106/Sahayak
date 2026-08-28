@@ -23,7 +23,7 @@ const ReportSimplifier = () => {
     formData.append("file", file);
 
     const response = await fetch(
-      "http://localhost:8000/simplify",
+      `${import.meta.env.VITE_API_URL}/simplify`,
       {
         method: "POST",
         body: formData,
