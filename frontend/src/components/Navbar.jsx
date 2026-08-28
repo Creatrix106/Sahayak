@@ -13,7 +13,7 @@ const Navbar = () => {
           onClick={() => setMenuOpen(false)}
         />)}
       <div className='navbar'>
-        <div className="logo">
+        <Link to="/" className="logo">
           <div className="nav-svg">
             <img src="./logo.svg" alt="" />
           </div>
@@ -21,7 +21,7 @@ const Navbar = () => {
             <h4>Sahayak</h4>
             <p>Your AI Health Companion</p>
           </div>
-        </div>
+        </Link>
         <div
           className="menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}

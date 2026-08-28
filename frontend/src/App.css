@@ -18,25 +18,32 @@
     --uploadHover:#e2e6ea;
     --resultStatus:#ecfdf5;
     --lightGreen:#228b5a;
+    --modeCard:#e1e5ff;
+    --card-report:#d7cdff76;
+    --card-symptom:#f0faf5;
 }
 
 [data-theme="dark"] {
 
-    --bg: #121212;
-    --surface: #1e1e1e;
+    --bg: #0a0021;
+    --surface: #000217;
     --text: #f3f3f3;
     --primary: #60a5fa;
     --analysisText:#d2e5ff;
   
     --border: 2px solid rgba(171, 171, 171, 0.126);
     --warning:rgba(115, 0, 0, 0.284);
-    --card:#181818;
-    --icon:hsla(0, 0%, 23%, 0.212);
+    --card:#00010c;
+    --icon:hsla(243, 100%, 9%, 0.212);
     --uploadZone:#71717114; 
     --uploadHover:#f8f9fa23; 
     --resultStatus:#002a163b;
     --lightGreen:#228b5a;
-  
+    --modeCard:#000211e9;
+    --card-report:#0a003076;
+    --card-symptom:#0032199c;
+
+
   
   
 

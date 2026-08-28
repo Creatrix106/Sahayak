@@ -1,6 +1,5 @@
 .summary-container{
     background-color: var(--card);
-    /* background-color: #fff; */
     display: flex;
     flex-direction: column;
     padding: 18px;

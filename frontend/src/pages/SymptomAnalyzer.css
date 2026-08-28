@@ -1,7 +1,6 @@
 .symptom-analyser-container {
     width: 100%;
     max-width: 1400px;
-    /* background-color: rgba(114, 255, 92, 0.09); */
     background-color: var(--surface);
     border: 2px solid rgba(128, 128, 128, 0.126);
     padding: 20px;
@@ -82,7 +81,7 @@ h3 {
 }
 
 .tag {
-  background: #e8f7ef;
+  background: var(--card-symptom);
   color: #228b5a;
   padding: 10px 16px;
   border-radius: 12px;
@@ -121,7 +120,7 @@ h3 {
 }
 
 .tip {
-  background: #effaf3;
+  background: var(--card-symptom);
   padding: 14px;
   border-radius: 12px;
   color: #228b5a;
