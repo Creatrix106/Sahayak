@@ -7,6 +7,7 @@ import SymptomAnalyzer from "./pages/SymptomAnalyzer";
 
 import SahayakAI from "./components/SahayakAI/SahayakAI.jsx";
 import ThemeToggle from './components/ThemeToggle'
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/symptom-analyser" element={<SymptomAnalyzer />} />
     </Routes>
     <SahayakAI/>
+    <Analytics />
     </>
   );
 }
