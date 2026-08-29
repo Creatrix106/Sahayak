@@ -238,6 +238,11 @@ h3 {
   font-weight: 600;
   cursor: pointer;
 }
+
+.input-box input {
+  color: var(--text);
+}
+
 @media (max-width: 900px) {
   .recommendations-section {
     grid-template-columns: 1fr;
@@ -286,4 +291,22 @@ h3 {
     text-align: center;
     align-items: center;
   }
+  
+  .symptom-card{
+    margin-top: 10px;
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .analyser-title h2{
+    font-size: 20px;
+  }
+  
+.result-section{
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+
 }

@@ -254,9 +254,9 @@ const Home = () => {
               <p className="mode-card-desc">
                 Upload your medical reports and get easy-to-understand summaries with highlighted key concerns.
               </p>
-              <a href="#" className="try-now-link try-now-link-report">
+              <Link to="/report-simplifier" className="try-now-link try-now-link-report">
                 Try now &nbsp;→
-              </a>
+              </Link>
             </div>
             <div className="mode-card-illustration">
               <ReportIllustration />
@@ -277,9 +277,9 @@ const Home = () => {
               <p className="mode-card-desc">
                 Enter your symptoms and get AI-powered possibility analysis with recommended tests and next steps.
               </p>
-              <a href="#" className="try-now-link try-now-link-symptom">
+              <Link to="/symptom-analyser" className="try-now-link try-now-link-symptom">
                 Try now &nbsp;→
-              </a>
+              </Link>
             </div>
             <div className="mode-card-illustration">
               <SymptomIllustration />

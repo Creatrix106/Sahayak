@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
+
 import Navbar from "../components/Navbar";
 import "./SymptomAnalyzer.css";
 import AnalysisPlaceholder from "../components/AnalysisPlaceholder";
@@ -69,6 +70,7 @@ const [conditions, setConditions] = useState([]);
 
   setLoading(false);
 };
+const inputRef = useRef(null);
   return (
     <div className="main-container">
       <Navbar />
@@ -105,6 +107,7 @@ const [conditions, setConditions] = useState([]);
 
             <div className="input-box">
               <input
+                ref={inputRef}
                 type="text"
                 placeholder="Describe your symptoms..."
                 value={input}
@@ -121,7 +124,7 @@ const [conditions, setConditions] = useState([]);
                 ))}
 
                 {symptoms.length < 20 && (
-                  <button className="add-btn" onClick={addSymptom}>
+                  <button className="add-btn" onClick={() => inputRef.current?.focus()}>
                     + Add more
                   </button>
                 )}

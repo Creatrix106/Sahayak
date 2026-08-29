@@ -1,6 +1,6 @@
 .analysis-card {
   background: var(--card);
-  width: 95%;
+  width: 100%;
   margin: auto;
   border-radius: 20px;
   padding: 25px;
@@ -84,6 +84,12 @@
 
   .analysis-placeholder h2 {
     font-size: 24px;
+  }
+  .analysis-placeholder h2{
+    font-size: 22px;
+  }
+  .analysis-placeholder p{
+    font-size: 12px;
   }
 }
 
