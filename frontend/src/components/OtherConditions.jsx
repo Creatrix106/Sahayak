@@ -31,9 +31,6 @@ const OtherConditions = ({
               key={index}
             >
               <div className="condition-left">
-                <div className="condition-icon">
-                  <Stethoscope size={22} />
-                </div>
 
                 <div>
                   <h3>{name}</h3>
